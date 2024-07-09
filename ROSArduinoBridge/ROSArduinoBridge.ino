@@ -89,10 +89,10 @@ volatile long leftEncoderTicks = 0;
 volatile long rightEncoderTicks = 0;
 
 // Pin definitions for encoders
-#define LEFT_ENC_PIN_A 2
-#define LEFT_ENC_PIN_B 3
-#define RIGHT_ENC_PIN_A 4
-#define RIGHT_ENC_PIN_B 5
+#define LEFT_ENC_PIN_A 7
+#define LEFT_ENC_PIN_B 8
+#define RIGHT_ENC_PIN_A 2
+#define RIGHT_ENC_PIN_B 3
 
 /* Clear the current command parameters */
 void resetCommand() {
@@ -113,13 +113,6 @@ int runCommand() {
   int pid_args[4];
   arg1 = atoi(argv1);
   arg2 = atoi(argv2);
-  
-  Serial.print("Command: ");
-  Serial.println(cmd);
-  Serial.print("Arg1: ");
-  Serial.println(arg1);
-  Serial.print("Arg2: ");
-  Serial.println(arg2);
   
   switch(cmd) {
   case GET_BAUDRATE:
@@ -216,8 +209,8 @@ void handleLeftEncA() {
   } else {
     leftEncoderTicks--;
   }
-  Serial.print("Left Encoder Ticks: ");
-  Serial.println(leftEncoderTicks);
+  // Serial.print("Left Encoder Ticks: ");
+  // Serial.println(leftEncoderTicks);
 }
 
 void handleLeftEncB() {
@@ -226,8 +219,8 @@ void handleLeftEncB() {
   } else {
     leftEncoderTicks++;
   }
-  Serial.print("Left Encoder Ticks: ");
-  Serial.println(leftEncoderTicks);
+  // Serial.print("Left Encoder Ticks: ");
+  // Serial.println(leftEncoderTicks);
 }
 
 void handleRightEncA() {
@@ -236,8 +229,8 @@ void handleRightEncA() {
   } else {
     rightEncoderTicks--;
   }
-  Serial.print("Right Encoder Ticks: ");
-  Serial.println(rightEncoderTicks);
+  // Serial.print("Right Encoder Ticks: ");
+  // Serial.println(rightEncoderTicks);
 }
 
 void handleRightEncB() {
@@ -246,8 +239,8 @@ void handleRightEncB() {
   } else {
     rightEncoderTicks++;
   }
-  Serial.print("Right Encoder Ticks: ");
-  Serial.println(rightEncoderTicks);
+  // Serial.print("Right Encoder Ticks: ");
+  // Serial.println(rightEncoderTicks);
 }
 
 /* Setup function--runs once at startup. */
